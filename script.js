@@ -1,7 +1,7 @@
 let clickCounter = 0;
 const button = document.getElementById("colorButton");
 function changeColor() {
-  clickCounter++;
+  ++clickCounter;
   if (clickCounter == 1) {
     button.classList.remove("btn-danger");
     button.classList.add("btn-warning");
