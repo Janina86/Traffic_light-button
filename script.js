@@ -1,16 +1,13 @@
 let clickCounter = 0;
 const button = document.getElementById("colorButton");
+const colors = ["btn-danger", "btn-warning", "btn-success"];
+
 function changeColor() {
-  ++clickCounter;
-  if (clickCounter == 1) {
-    button.classList.remove("btn-danger");
-    button.classList.add("btn-warning");
-  } else if (clickCounter == 2) {
-    button.classList.remove("btn-warning");
-    button.classList.add("btn-success");
-  } else {
-    button.classList.remove("btn-success");
-    button.classList.add("btn-danger");
-    clickCounter = 0;
+  for (let i = 0; i < colors.length; i++) {
+    button.classList.remove(colors[i]);
   }
+
+  button.classList.add(colors[clickCounter]);
+
+  clickCounter = (clickCounter + 1) % colors.length;
 }
